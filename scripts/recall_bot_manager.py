@@ -13,7 +13,9 @@ import argparse
 from typing import Dict, Any, Optional
 from dotenv import load_dotenv
 
-load_dotenv()
+script_dir = os.path.dirname(os.path.abspath(__file__))
+server_env_path = os.path.join(script_dir, '..', 'server', '.env')
+load_dotenv(server_env_path)
 
 class RecallBotManager:
     """Manager for Recall.ai bot operations"""
